@@ -13,6 +13,7 @@ const unoCSSConfig: VitePluginConfig = {
       include: [
         /\.(vue|svelte|[jt]sx|mdx?|astro|elm|php|phtml|html|stories.ts)($|\?)/,
         'src/**/*.{js,ts}',
+        '**/*.{jpg,jpeg,png,gif,svg}',
       ],
     }
   }
