@@ -17,11 +17,11 @@
       gap: 10px;
       align-self: stretch;
       background: var(--white, #FFF);
+      max-width: 100%;
     }
   
     .heading {
       display: flex;
-      width: 1360px;
       flex-direction: column;
       justify-content: center;
       color: var(--gray-900, #111928);

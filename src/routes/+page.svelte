@@ -20,11 +20,13 @@
 	import Newsletter from '../components/Newsletter.svelte';
 	import Clients from '../components/Clients.svelte';
 	import Introduction from '../components/Introduction.svelte';
+	import Features from '../components/Features.svelte';
 </script>
 
 <slot>
 	<HomePage />
 	<Clients />
 	<Introduction />
+	<Features />
 	<Newsletter />
 </slot>
