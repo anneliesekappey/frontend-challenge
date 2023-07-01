@@ -21,6 +21,7 @@
 	import Clients from '../components/Clients.svelte';
 	import Introduction from '../components/Introduction.svelte';
 	import Features from '../components/Features.svelte';
+	import Pricing from '../components/Pricing.svelte';
 </script>
 
 <slot>
@@ -28,5 +29,6 @@
 	<Clients />
 	<Introduction />
 	<Features />
+	<Pricing />
 	<Newsletter />
 </slot>
