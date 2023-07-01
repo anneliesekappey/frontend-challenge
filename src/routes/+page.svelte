@@ -19,10 +19,12 @@
 	import HomePage from '../components/HomePage.svelte';
 	import Newsletter from '../components/Newsletter.svelte';
 	import Clients from '../components/Clients.svelte';
+	import Introduction from '../components/Introduction.svelte';
 </script>
 
 <slot>
 	<HomePage />
 	<Clients />
+	<Introduction />
 	<Newsletter />
 </slot>
