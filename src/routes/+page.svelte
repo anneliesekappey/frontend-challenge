@@ -17,8 +17,10 @@
 	import '../style.css';
 	import '@unocss/reset/tailwind.css';
 	import HomePage from '../components/HomePage.svelte';
+	import Newsletter from '../components/Newsletter.svelte';
 </script>
 
 <slot>
 	<HomePage />
+	<Newsletter />
 </slot>
