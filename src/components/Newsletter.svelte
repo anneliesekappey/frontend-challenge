@@ -1,10 +1,9 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
-  import { onDestroy } from 'svelte';
+  import { onMount, onDestroy } from 'svelte';
 	import { writable } from 'svelte/store';
 
   let email: string = '';
-  let isMounted = false;
+  let isEmailAdded = false;
   let error = writable('');
   let successMessage = writable('');
 
@@ -22,7 +21,7 @@
     }
 
   try {
-    const response = await fetch('/routes/api/newsletter', {
+    const response = await fetch('/src/routes/api/newsletter.js', {
     method: 'POST',
     mode: 'no-cors',
     headers: {
@@ -32,7 +31,7 @@
   });
 
   if (response.ok) {
-    successMessage.set('Thank you for subscribing to our newsletter!');
+    isEmailAdded = true;
     console.log('Email added')
     clearForm();
 
@@ -58,6 +57,7 @@
   }
 
   onMount(() => {
+    let isMounted = false;
     isMounted = true;
   })
 
@@ -72,6 +72,7 @@
     display: flex;
     padding: 96px 80px;
     flex-direction: column;
+    width: 100%;
     align-items: center;
     gap: 10px;
     align-self: stretch;
@@ -88,7 +89,6 @@
 
   .title {
     display: flex;
-    width: 672px;
     flex-direction: column;
     justify-content: center;
     color: var(--gray-900, #111928);
@@ -170,6 +170,19 @@
     font-weight: 400;
     line-height: 150%;
     }  
+
+  .success-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #1C64F2;
+    text-align: center;
+    font-size: 20px;
+    font-family: Arial;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+  }  
   
   .small-text {
     display: flex;
@@ -202,11 +215,14 @@
     <div class="input-container">
       <div class="email-input">
         <img src="/public/images/mail.png" alt="envelope" class="icon-mail"/>
-        <input type="email" value={email} placeholder="Enter your email" />
+        <input type="email" bind:value={email} placeholder="Enter your email" />
       </div>
     </div>
     <button class="subscribe-button" on:click={subscribe}>Subscribe</button>
   </div>
+  {#if isEmailAdded}
+  <div class="success-message">Thank you for subscribing! Newsletter on its way to you!</div>
+{/if}
     <div class="small-text">
       <p>We care about the protection of your data. Read our <span class="privacy-policy">Privacy Policy</span>.</p>
     </div>

@@ -61,7 +61,7 @@
 
   .features-row {
     display: flex;
-    align-items: center;
+    align-items: first baseline;
     justify-content: center;
     max-width: 100%;
     gap: 48px;

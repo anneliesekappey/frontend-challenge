@@ -1,9 +1,30 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+//   import { writable } from 'svelte/store';
+//   import fetch from 'node-fetch';
+
+//   let loading = true;
+//   let data = writable<any>(null);
   
-  onMount(() => {
-    // Code to handle component initialization or data fetching
+  onMount(async () => {
+    // try {
+    //     const response = await fetch('https://n8n.thearc.dev/webhook/pricing', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //         },
+    //         body: JSON.stringify({ interval: 'monthly' }),
+    //     });
+
+    //     const pricingData = await response.json();
+    //     data.set(pricingData);
+    // } catch (error) {
+    //     console.error('Error fetching pricing data:', error);
+    // } finally {
+    //     loading = false;
+    // }
   });
+
 </script>
 
 <style>
@@ -251,7 +272,7 @@
     font-weight: 400;
     line-height: 150%;
   }
-  
+
 </style>
 
 <div class="pricing-container">
