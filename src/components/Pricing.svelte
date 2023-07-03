@@ -1,31 +1,40 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-//   import { writable } from 'svelte/store';
-//   import fetch from 'node-fetch';
+  import { writable } from 'svelte/store';
 
-//   let loading = true;
-//   let data = writable<any>(null);
+  const selectedInterval = writable('monthly');
   
   onMount(async () => {
-    // try {
-    //     const response = await fetch('https://n8n.thearc.dev/webhook/pricing', {
-    //         method: 'POST',
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //         },
-    //         body: JSON.stringify({ interval: 'monthly' }),
-    //     });
+    try {
+        const response = await fetch('/proxy', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ 
+                interval: $selectedInterval, 
+            }),
+        });
 
-    //     const pricingData = await response.json();
-    //     data.set(pricingData);
-    // } catch (error) {
-    //     console.error('Error fetching pricing data:', error);
-    // } finally {
-    //     loading = false;
-    // }
+        if (response.ok) {
+            const data = await response.json();
+            console.log(data);
+        } else {
+            console.error('Error:', response.status);
+        }
+    } catch (error) {
+        console.error('Error fetching data:', error)
+    }
   });
 
 </script>
+
+<!-- <main>
+    <select bind:value={$selectedInterval}>
+    <option value="monthly">Monthly</option>
+    <option value="yearly">Yearly</option>
+    </select>
+</main> -->
 
 <style>
   .pricing-container {
