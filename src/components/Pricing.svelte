@@ -118,7 +118,6 @@
     border-radius: 8px;
     border: 1px solid var(--gray-200, #E5E7EB);
     background: var(--white, #FFF);
-    /* shadow */
     box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.10), 0px 1px 3px 0px rgba(0, 0, 0, 0.10);
   }
 
@@ -239,7 +238,8 @@
   }
 
   .strike-through {
-    text-decoration-line: strikethrough;
+    text-decoration: line-through;
+    color: #6B7280;
   }
 
   .popular-header {
@@ -374,7 +374,7 @@
             </div>
             <div class="item-1">
               <img class="feature-image" src="/public/images/paper-airplane.png" alt="Paper airplane">
-              <div class="feature strike-through">
+              <div class="feature">
                 Get hundreds of feature updates
               </div>
             </div>
@@ -421,19 +421,19 @@
             </div>
             <div class="item-1">
               <img class="feature-image" src="/public/images/paper-airplane.png" alt="Paper airplane">
-              <div class="feature strike-through">
+              <div class="feature">
                 Get hundreds of feature updates
               </div>
             </div>
             <div class="item-1">
               <img class="feature-image" src="public/images/presentation-chart-bar.png" alt="Presentation chart bar">
-              <div class="feature strike-through">
+              <div class="feature">
                 Financial reconciliation and reporting
               </div>
             </div>
             <div class="item-1">
               <img class="feature-image" src="public/images/chat.png" alt="Chat">
-              <div class="feature strike-through">
+              <div class="feature">
                 24×7 phone, chat, and email support
               </div>
             </div>

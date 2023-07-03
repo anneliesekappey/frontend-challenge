@@ -67,7 +67,7 @@
 
 </script>
 
-<style lang="uno">
+<style>
   .container {
     display: flex;
     padding: 96px 80px;
@@ -145,6 +145,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
+    gap: 10px;
     }
   
   .email-input input {
@@ -181,6 +182,19 @@
     font-family: Arial;
     font-style: normal;
     font-weight: 400;
+    line-height: 150%;
+  }  
+
+  .error-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: red;
+    text-align: center;
+    font-size: 16px;
+    font-family: Arial;
+    font-style: normal;
+    font-weight: 300;
     line-height: 150%;
   }  
   
@@ -222,6 +236,9 @@
   </div>
   {#if isEmailAdded}
   <div class="success-message">Thank you for subscribing! Newsletter on its way to you!</div>
+{/if}
+  {#if email && !validateEmail(email)}
+  <div class="error-message">Please enter a valid e-mail address.</div>
 {/if}
     <div class="small-text">
       <p>We care about the protection of your data. Read our <span class="privacy-policy">Privacy Policy</span>.</p>

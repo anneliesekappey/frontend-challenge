@@ -1,7 +1,7 @@
 <script lang="ts">
 </script>
 
-<style lang="uno">
+<style>
   .container {
     display: flex;
     padding: 96px 80px;
@@ -10,6 +10,14 @@
     gap: 10px;
     align-self: stretch;
     background: var(--white, #FFF);
+  }
+
+  .inner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+    align-self: stretch;
   }
 
   .text-container {
@@ -109,6 +117,7 @@
 </style>
 
 <div class="container">
+  <div class="inner-container">
     <div class="text-container">
   <h2 class="heading">Designed for business teams like yours</h2>
   <p class="supporting-text">Here at flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
@@ -136,4 +145,5 @@
       <p class="feature-description">Auto-assign tasks, send Slack messages, and much more. Now power up with hundreds of new templates to help you get started.</p>
     </div>
   </div>
+</div>
 </div>
