@@ -130,6 +130,17 @@
     box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.10), 0px 1px 3px 0px rgba(0, 0, 0, 0.10);
   }
 
+  .plan-container-center {
+    display: flex;
+    padding: 32px;
+    align-items: center;
+    flex: 1 0 0;
+    border-radius: 8px;
+    border: 1px solid var(--primary-600, #1C64F2);
+    background: var(--white, #FFF);
+    box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.10), 0px 1px 3px 0px rgba(0, 0, 0, 0.10);
+  }
+
   .card-header {
     display: flex;
     flex-direction: column;
@@ -352,7 +363,7 @@
           </div>
         </div>
       </div>
-      <div class="plan-container">
+      <div class="plan-container-center">
         <div class="card-header popular-header">
           <div class="sub-header">
             Most popular
